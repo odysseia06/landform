@@ -1,0 +1,356 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/landform/editor/land_panel.gd" id="1"]
+
+[node name="LandformLandPanel" type="MarginContainer"]
+custom_minimum_size = Vector2(280, 0)
+size_flags_vertical = 3
+script = ExtResource("1")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Box" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Unedited" type="Label" parent="Scroll/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Select a LandformLandView in the scene tree."
+autowrap_mode = 3
+
+[node name="NoLand" type="VBoxContainer" parent="Scroll/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Intro" type="Label" parent="Scroll/Box/NoLand"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Form" type="GridContainer" parent="Scroll/Box/NoLand"]
+layout_mode = 2
+columns = 2
+
+[node name="SizeLabel" type="Label" parent="Scroll/Box/NoLand/Form"]
+layout_mode = 2
+text = "Size"
+
+[node name="NewSize" type="OptionButton" parent="Scroll/Box/NoLand/Form"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CountryLabel" type="Label" parent="Scroll/Box/NoLand/Form"]
+layout_mode = 2
+text = "Country"
+
+[node name="NewCountry" type="OptionButton" parent="Scroll/Box/NoLand/Form"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SeedLabel" type="Label" parent="Scroll/Box/NoLand/Form"]
+layout_mode = 2
+text = "Seed"
+
+[node name="NewSeed" type="SpinBox" parent="Scroll/Box/NoLand/Form"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+
+[node name="FileLabel" type="Label" parent="Scroll/Box/NoLand/Form"]
+layout_mode = 2
+text = "File"
+
+[node name="FileRow" type="HBoxContainer" parent="Scroll/Box/NoLand/Form"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NewFile" type="LineEdit" parent="Scroll/Box/NoLand/Form/FileRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res://lands/land.lfland"
+
+[node name="ChooseFile" type="Button" parent="Scroll/Box/NoLand/Form/FileRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Choose"
+
+[node name="MakeLand" type="Button" parent="Scroll/Box/NoLand"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Make land"
+
+[node name="FormSaid" type="Label" parent="Scroll/Box/NoLand"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="FileDialog" type="FileDialog" parent="Scroll/Box/NoLand"]
+unique_name_in_owner = true
+title = "Choose land file"
+file_mode = 4
+access = 0
+filters = PackedStringArray("*.lfland ; Land files")
+
+[node name="Growing" type="VBoxContainer" parent="Scroll/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GrowingText" type="Label" parent="Scroll/Box/Growing"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="StopGrowing" type="Button" parent="Scroll/Box/Growing"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stop"
+
+[node name="Failed" type="VBoxContainer" parent="Scroll/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FailedText" type="Label" parent="Scroll/Box/Failed"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Dismiss" type="Button" parent="Scroll/Box/Failed"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
+[node name="Land" type="VBoxContainer" parent="Scroll/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ToolHint" type="Label" parent="Scroll/Box/Land"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Brush" type="VBoxContainer" parent="Scroll/Box/Land"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BrushTitle" type="Label" parent="Scroll/Box/Land/Brush"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+
+[node name="BrushFields" type="GridContainer" parent="Scroll/Box/Land/Brush"]
+layout_mode = 2
+columns = 2
+
+[node name="BrushRadiusLabel" type="Label" parent="Scroll/Box/Land/Brush/BrushFields"]
+layout_mode = 2
+text = "Radius (m)"
+
+[node name="BrushRadius" type="LineEdit" parent="Scroll/Box/Land/Brush/BrushFields"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_all_on_focus = true
+
+[node name="BrushStrengthLabel" type="Label" parent="Scroll/Box/Land/Brush/BrushFields"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Strength"
+
+[node name="BrushStrength" type="LineEdit" parent="Scroll/Box/Land/Brush/BrushFields"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_all_on_focus = true
+
+[node name="BrushUses" type="Label" parent="Scroll/Box/Land/Brush"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="ItemsTitle" type="Label" parent="Scroll/Box/Land"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Rivers and lakes"
+
+[node name="Items" type="Tree" parent="Scroll/Box/Land"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+columns = 3
+column_titles_visible = true
+hide_root = true
+select_mode = 1
+
+[node name="Selected" type="VBoxContainer" parent="Scroll/Box/Land"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SelectedTitle" type="Label" parent="Scroll/Box/Land/Selected"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+
+[node name="PointText" type="Label" parent="Scroll/Box/Land/Selected"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FramePoint" type="Button" parent="Scroll/Box/Land/Selected"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Frame point"
+
+[node name="Fields" type="GridContainer" parent="Scroll/Box/Land/Selected"]
+layout_mode = 2
+columns = 2
+
+[node name="EastLabel" type="Label" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "East, x (m)"
+
+[node name="East" type="LineEdit" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_all_on_focus = true
+
+[node name="SouthLabel" type="Label" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "South, z (m)"
+
+[node name="South" type="LineEdit" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_all_on_focus = true
+
+[node name="WidthLabel" type="Label" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Width (m)"
+
+[node name="Width" type="LineEdit" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_all_on_focus = true
+
+[node name="RadiusLabel" type="Label" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Radius (m)"
+
+[node name="Radius" type="LineEdit" parent="Scroll/Box/Land/Selected/Fields"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_all_on_focus = true
+
+[node name="Shown" type="Label" parent="Scroll/Box/Land/Selected"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="SelectedNotes" type="Label" parent="Scroll/Box/Land/Selected"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="RemoveItem" type="Button" parent="Scroll/Box/Land/Selected"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Remove river"
+
+[node name="LandTitle" type="Label" parent="Scroll/Box/Land"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Land"
+
+[node name="Facts" type="GridContainer" parent="Scroll/Box/Land"]
+layout_mode = 2
+columns = 2
+
+[node name="FileLabel" type="Label" parent="Scroll/Box/Land/Facts"]
+layout_mode = 2
+text = "File"
+
+[node name="FileValue" type="Label" parent="Scroll/Box/Land/Facts"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text_overrun_behavior = 3
+
+[node name="SizeLabel" type="Label" parent="Scroll/Box/Land/Facts"]
+layout_mode = 2
+text = "Size"
+
+[node name="SizeValue" type="Label" parent="Scroll/Box/Land/Facts"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CountryLabel" type="Label" parent="Scroll/Box/Land/Facts"]
+layout_mode = 2
+text = "Country"
+
+[node name="CountryChoice" type="OptionButton" parent="Scroll/Box/Land/Facts"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SeedLabel" type="Label" parent="Scroll/Box/Land/Facts"]
+layout_mode = 2
+text = "Seed"
+
+[node name="SeedValue" type="SpinBox" parent="Scroll/Box/Land/Facts"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+
+[node name="ReachLabel" type="Label" parent="Scroll/Box/Land/Facts"]
+layout_mode = 2
+text = "Reach (m)"
+
+[node name="ReachValue" type="SpinBox" parent="Scroll/Box/Land/Facts"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BandLabel" type="Label" parent="Scroll/Box/Land/Facts"]
+layout_mode = 2
+text = "Band"
+
+[node name="BandValue" type="Label" parent="Scroll/Box/Land/Facts"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TerrainNotes" type="FoldableContainer" parent="Scroll/Box/Land"]
+unique_name_in_owner = true
+layout_mode = 2
+folded = true
+title = "Terrain notes"
+
+[node name="LandNotes" type="Label" parent="Scroll/Box/Land/TerrainNotes"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="SaveLand" type="Button" parent="Scroll/Box/Land"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save land"

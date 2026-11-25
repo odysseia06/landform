@@ -1,0 +1,7 @@
+[gd_resource type="Shortcut" format=3 uid="uid://k37riq0co8c7"]
+
+[sub_resource type="InputEventKey" id="escape"]
+keycode = 4194305
+
+[resource]
+events = [SubResource("escape")]

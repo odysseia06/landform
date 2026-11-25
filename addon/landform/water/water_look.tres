@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="LandformWaterLook" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://addons/landform/water/landform_water_look.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cxn5bmisfqb12" path="res://addons/landform/water/ripples.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cicrtru2hoalf" path="res://addons/landform/water/foam.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+shallow_color = Color(0.78, 0.92, 0.86, 1)
+deep_color = Color(0.04, 0.16, 0.18, 1)
+bed_gone_m = 1.2
+edge_fade_m = 0.06
+reflection = 0.3
+roughness = 0.06
+lift_start_m = 500.0
+lift_per_m = 0.006
+lift_most_m = 8.0
+ripple_pattern = ExtResource("2")
+ripple_size_m = 4.0
+ripple_fine_size_m = 0.9
+ripple_strength = 0.5
+ripple_drift_m_s = 0.08
+flow_speed = 1.0
+flow_cycle_s = 3.0
+bend_m = 0.12
+foam_pattern = ExtResource("3")
+foam_color = Color(0.92, 0.95, 0.95, 1)
+foam_from_fall = 0.1
+foam_full_fall = 0.3
+foam_size_m = 1.6
+foam_soft = 0.2
+foam_ripples = 2.5
+hills_reflection = 0.8
+hills_steps = 20
+hills_reach_m = 150.0
+hills_fade = 0.25

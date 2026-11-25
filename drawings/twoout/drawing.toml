@@ -1,0 +1,20 @@
+size_m = 1024
+high_ground = "high_ground.png"
+country = "hills"
+
+[[rivers]]
+width_m = 10.0
+points = [[-460.8, -307.2], [-204.8, -153.6], [0.0, 0.0]]
+
+[[rivers]]
+width_m = 8.0
+points = [[0.0, 0.0], [204.8, 204.8], [486.4, 307.2]]
+
+[[rivers]]
+width_m = 6.0
+points = [[0.0, 0.0], [153.6, -256.0], [307.2, -496.64]]
+
+[[lakes]]
+x_m = 0.0
+z_m = 0.0
+radius_m = 51.2

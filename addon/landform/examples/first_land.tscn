@@ -1,0 +1,51 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://addons/landform/land/landform_land_view.tscn" id="1"]
+[ext_resource type="Script" path="res://addons/landform/land/landform_terrain_look.gd" id="2"]
+[ext_resource type="Texture2D" path="res://addons/landform/examples/ground.png" id="3"]
+
+[sub_resource type="Terrain3DTextureAsset" id="meadow_grass"]
+id = 0
+albedo_color = Color(0.48, 0.63, 0.34, 1)
+albedo_texture = ExtResource("3")
+
+[sub_resource type="Terrain3DTextureAsset" id="dry_grass"]
+id = 1
+albedo_color = Color(0.70, 0.66, 0.41, 1)
+albedo_texture = ExtResource("3")
+
+[sub_resource type="Terrain3DTextureAsset" id="bare_soil"]
+id = 2
+albedo_color = Color(0.55, 0.40, 0.29, 1)
+albedo_texture = ExtResource("3")
+
+[sub_resource type="Terrain3DTextureAsset" id="rock"]
+id = 3
+albedo_color = Color(0.53, 0.54, 0.53, 1)
+albedo_texture = ExtResource("3")
+
+[sub_resource type="Terrain3DTextureAsset" id="scree"]
+id = 4
+albedo_color = Color(0.62, 0.59, 0.54, 1)
+albedo_texture = ExtResource("3")
+
+[sub_resource type="Terrain3DTextureAsset" id="wet_ground"]
+id = 5
+albedo_color = Color(0.33, 0.38, 0.27, 1)
+albedo_texture = ExtResource("3")
+
+[sub_resource type="Terrain3DAssets" id="assets"]
+texture_list = Array[Terrain3DTextureAsset]([SubResource("meadow_grass"), SubResource("dry_grass"), SubResource("bare_soil"), SubResource("rock"), SubResource("scree"), SubResource("wet_ground")])
+
+[sub_resource type="Resource" id="look"]
+script = ExtResource("2")
+assets = SubResource("assets")
+material_textures = Dictionary[String, int]({"meadow_grass": 0, "dry_grass": 1, "bare_soil": 2, "rock": 3, "scree": 4, "wet_ground": 5})
+
+[sub_resource type="LandformConfig" id="config"]
+
+[node name="FirstLand" type="Node3D"]
+
+[node name="LandView" parent="." instance=ExtResource("1")]
+look = SubResource("look")
+config = SubResource("config")

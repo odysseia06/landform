@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[node name="OpenLandform" type="ConfirmationDialog"]
+title = "Open Landform"
+visible = false
+ok_button_text = "Add Landform View"
+dialog_text = "Add an empty Landform view to this scene or open the project's authoring scene."

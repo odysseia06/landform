@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://addons/landform/land/landform_land_view.gd" id="1"]
+[ext_resource type="PackedScene" path="res://addons/landform/water/landform_water.tscn" id="3"]
+[ext_resource type="Shader" path="res://addons/landform/land/land_lines.gdshader" id="4"]
+
+[sub_resource type="Terrain3DMaterial" id="terrain_material"]
+resource_local_to_scene = true
+world_background = 0
+auto_shader_enabled = false
+
+[sub_resource type="ShaderMaterial" id="lines_material"]
+resource_local_to_scene = true
+render_priority = 1
+shader = ExtResource("4")
+
+[node name="LandformLandView" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+unique_name_in_owner = true
+render_layers = 2148007937
+material = SubResource("terrain_material")
+free_editor_textures = false
+
+[node name="Water" parent="." instance=ExtResource("3")]
+unique_name_in_owner = true
+
+[node name="Overlay" type="Decal" parent="."]
+unique_name_in_owner = true
+visible = false
+upper_fade = 0.0
+lower_fade = 0.0
+cull_mask = 524288
+
+[node name="Lines" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+visible = false
+cast_shadow = 0
+material_override = SubResource("lines_material")

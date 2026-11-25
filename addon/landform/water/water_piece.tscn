@@ -1,0 +1,4 @@
+[gd_scene format=3]
+
+[node name="WaterPiece" type="MeshInstance3D"]
+cast_shadow = 0

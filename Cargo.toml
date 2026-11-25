@@ -1,0 +1,6 @@
+[workspace]
+members = ["crates/core", "crates/cli", "crates/godot"]
+resolver = "2"
+
+[profile.dev]
+opt-level = 3

@@ -1,0 +1,10 @@
+[configuration]
+entry_symbol = "gdext_rust_init"
+compatibility_minimum = 4.8
+; Hot reload is safe: every generation runs in the extension's own thread pool, and unloading waits for
+; the background jobs and then for the pool's threads, so no thread is left in unloaded code.
+reloadable = true
+
+[libraries]
+windows.debug.x86_64 = "res://addons/landform/bin/landform_godot.windows.debug.x86_64.dll"
+windows.release.x86_64 = "res://addons/landform/bin/landform_godot.windows.release.x86_64.dll"

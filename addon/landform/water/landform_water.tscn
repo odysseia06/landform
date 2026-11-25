@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://addons/landform/water/landform_water.gd" id="1"]
+[ext_resource type="Resource" path="res://addons/landform/water/water_look.tres" id="2"]
+[ext_resource type="PackedScene" path="res://addons/landform/water/water_piece.tscn" id="3"]
+[ext_resource type="Shader" path="res://addons/landform/water/water.gdshader" id="4"]
+
+[sub_resource type="ShaderMaterial" id="water_material"]
+resource_local_to_scene = true
+shader = ExtResource("4")
+
+[node name="LandformWater" type="Node3D"]
+script = ExtResource("1")
+look = ExtResource("2")
+piece_scene = ExtResource("3")
+material = SubResource("water_material")

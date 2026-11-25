@@ -1,0 +1,8 @@
+id = "olympic"
+attribution = "Elevation data: U.S. Geological Survey, 3D Elevation Program, 1/3 arc-second DEM"
+tiles = ["USGS_13_n48w124.tif"]
+projection = "+proj=utm +zone=10 +ellps=GRS80 +units=m +no_defs"
+center_lon = -123.60
+center_lat = 47.75
+size_m = 50000.0
+cell_size_m = 10.0

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="LandformOverlayLook" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/landform/land/landform_overlay_look.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+rim_color = Color(0.95, 0.1, 0.1, 1)
+band_edge_color = Color(1, 0.7, 0, 1)
+held_color = Color(0, 0.85, 0.95, 0.4)
+hand_color = Color(0.3, 0.9, 0.2, 0.4)
+area_color = Color(0.95, 0, 0.95, 0.4)
+edge_cells = 3
+river_color = Color(0.25, 0.6, 1, 1)
+lake_color = Color(0.25, 0.6, 1, 1)
+point_color = Color(1, 1, 1, 1)
+selected_color = Color(1, 0.85, 0.1, 1)
+line_pixels = 2.0
+marker_pixels = 9.0
